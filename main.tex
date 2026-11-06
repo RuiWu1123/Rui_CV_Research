@@ -1,0 +1,320 @@
+%
+%Academic CV LaTeX Template
+% Author: Dubasi Pavan Kumar
+% LinkedIn: https://www.linkedin.com/in/im-pavankumar/
+% License: MIT
+%
+% For errors, suggestions, or improvements, please contact:
+% Email: pavankumard.pg19.ma@nitp.ac.in
+%
+
+
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{academicons}
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+\usepackage{academicons} % 导入学术图标包
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+\definecolor{subtle}{RGB}{90,90,90}
+
+% Page layout
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\footskip}{5pt} % Addressing fancyhdr warning
+\usepackage{fontawesome5} % 支持 GitHub 图标
+% Hyperlink setup (moved after fancyhdr to address warning)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+
+\definecolor{darkblue}{RGB}{0,70,140}
+\definecolor{starred}{RGB}{200,0,0} % 自定义红色星标字体
+\renewcommand{\rmdefault}{ppl} % Palatino everywhere, incl. \textnormal in Honors
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.5mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Huge\textbf{Rui Wu}}
+\end{center}
+\vspace{-4mm}
+
+\begin{center}
+
+    \small{
+    E-mail: rw761@scarletmail.rutgers.edu | Tel: +1 848-365-2929 
+    }
+\end{center}
+\begin{center}
+\vspace{0.7mm}
+    \small{
+    \socialicon{\faHome} \href{https://ruiwu1123.github.io/}{Personal Page} |  
+        \socialicon{\faGithub} \href{https://github.com/RuiWu1123}{Github} | 
+    \socialicon{\faGoogle}
+    \href{https://scholar.google.com/citations?user=M1FovLwAAAAJ&hl=zh-CN}{Google scholar} 
+    % |    
+    % \socialicon{\faLinkedin}
+    % \href{https://www.linkedin.com/in/yihao-quan-24223632a/}{Linkedin}
+    }
+\end{center}
+
+\vspace{-7mm}
+
+
+
+    
+
+
+
+
+
+
+\section{\textbf{Education}}
+\vspace{0.6mm}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Rutgers University - New Brunswick}{Sep 2024-Present}
+{Bachelor: Major in Computer Science (Honor Program), GPA: 3.83/4.0}{}
+
+\resumeSubHeadingListEnd
+\vspace{-5.5mm}
+
+
+\section{\textbf{Research Interests}}
+\vspace{1mm}
+\small{
+I work on AI safety, with a focus on \textbf{reward hacking} in large language models: a model gets a high reward in ways people did not intend, without actually solving the task. My work spans four questions:
+\begin{itemize}
+\item \textbf{Science of reward hacking:} How reward hacking emerges in RL and generalizes into broader misalignment.
+\item \textbf{Alignment training:} Training models that stay aligned under imperfect rewards or specifications.
+\item \textbf{Monitoring systems:} Detecting misbehavior at runtime via chain-of-thought monitors and activation probes.
+\item \textbf{Evaluation and its science:} Measuring these reliably when models can recognize evaluation.
+\end{itemize}
+}
+\vspace{-4mm}
+
+\section{\textbf{Selected Publications} \hfill \textcolor{darkblue}{\scriptsize * = equal contribution}}
+\vspace{1mm}
+\small{
+\begin{enumerate}[leftmargin=*, labelsep=0.5em, align=left, widest={[\textbf{S.1}]}, itemindent=0em, label={\textbf{[\arabic*]}]}]
+
+\item[\textbf{[1]}] \underline{\textbf{Rui Wu}}, Ruixiang Tang. (2026). \textbf{From Rebound to Remedy: Understanding and Mitigating Reward Hacking via Representation Engineering}. \textit{COLM 2026} [\href{https://arxiv.org/abs/2604.01476}{arXiv}] \\
+{\footnotesize\color{subtle}TL;DR: Shows that reward hacking in RL on coding tasks follows a three-phase rebound pattern, and mitigates it by adding a shortcut-concept score from model representations into the GRPO advantage.}
+
+\item[\textbf{[2]}] Can Jin*, \underline{\textbf{Rui Wu*}}, Tong Che*, Qixin Zhang, Hongwu Peng, Jiahui Zhao, Zhenting Wang, Wenqi Wei, Ligong Han, Zhao Zhang, Yuan Cao, Ruixiang Tang, Dimitris N. Metaxas. (2026). \textbf{Reasoning over Precedents Alongside Statutes: Case-Augmented Deliberative Alignment for LLM Safety}. \textit{ACL 2026 Main} [\href{https://arxiv.org/abs/2601.08000}{arXiv}] \\
+{\footnotesize\color{subtle}TL;DR: Finds that detailed safety codes give inconsistent safety gains and reduce helpfulness in open models, and proposes RL on safety reasoning with simple rules plus illustrative cases.}
+
+\item[\textbf{[3]}] \underline{\textbf{Rui Wu}}, Yihao Quan, Zeru Shi, Zhenting Wang, Yanshu Li, Ruixiang Tang. (2025). \textbf{Read the Scene, Not the Script: Outcome-Aware Safety for LLMs}. \textit{NeurIPS 2025 ResponsibleFM Workshop} [\href{https://arxiv.org/abs/2510.04320}{arXiv}] \\
+{\footnotesize\color{subtle}TL;DR: Identifies consequence-blindness, where models judge safety by surface cues rather than actual outcomes; builds a benchmark to measure it and a dataset that reduces both jailbreaks and over-refusal.}
+
+\item[\textbf{[4]}] Can Jin, Jiakang Li, \underline{\textbf{Rui Wu}}, Eddy Zhang, Dimitris N Metaxas. (2026). \textbf{Weak Critics Make Strong Learners: On-Policy Critique Distillation for Scalable Oversight}. \textit{ICML 2026 AI4Math Workshop} [\href{https://arxiv.org/abs/2606.00424}{arXiv}] \\
+{\footnotesize\color{subtle}TL;DR: Uses a weak model as a critic that suggests revision directions rather than answers, and distills critic-guided behavior into the strong model through on-policy training.}
+
+\end{enumerate}
+}
+
+\section{\textbf{Research Experience}}
+\vspace{0.3mm}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+      {{Reward Hacking and Emergent Misalignment}}{}
+      {MATS Research | Collaborating with \href{https://scholar.google.com/citations?user=zB9lUvMAAAAJ&hl=en}{Shaochen (Henry) Zhong}, advised by \href{https://www.ruixiangtang.net/}{Ruixiang (Ryan) Tang}}{Sep 2026 - Present}
+      \resumeItemListStart
+        \item Studying whether a model's familiarity with inoculation prompting (IP) weakens its protection against emergent misalignment (EM) from reward hacking; built an open-source recipe that elicits natural EM in coding RL, and found that IP-aware models trained with IP show about 2.4$\times$ the EM of IP-unaware ones.
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+    \resumeSubHeadingListStart
+  \resumeSubheading
+      {{Large Language Models Alignment Training}}{}
+      {Rutgers University | Advised by \href{https://www.ruixiangtang.net/}{Ruixiang (Ryan) Tang}}{May 2025 - Present}
+      \resumeItemListStart
+        \item Studied the training dynamics and mitigation of reward hacking in RL [1].
+        \item Studied consequence-aware safety reasoning in LLMs [3].
+        \item Ran experiments for case-augmented deliberative alignment [2].
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Teaching Experience}}
+\vspace{1mm}
+\small{
+\textbf{Grader}, \href{https://www.cs.rutgers.edu/academics/graduate/m-s-program/course-synopses/course-details/16-198-550-massive-data-mining}{CS 550: Massive Data Mining}, Rutgers University \hfill Fall 2025
+
+\textbf{Teaching Assistant}, \href{https://www.cs.rutgers.edu/academics/undergraduate/course-synopses/course-details/01-198-439-introduction-to-data-science}{CS 439: Intro to Data Science}, Rutgers University \hfill Spring 2026\par
+}
+\vspace{-2mm}
+
+\section{\textbf{Professional Service}}
+\vspace{1mm}
+\small{
+\textbf{Reviewer}, International Conference on Learning Representations (ICLR) \hfill 2027
+
+\textbf{Reviewer}, NeurIPS Workshop on Responsible Foundation Models (ResponsibleFM) \hfill 2025\par
+}
+\vspace{-2mm}
+
+\section{\textbf{Honors and Awards}}
+
+\resumeSubHeadingListStart
+\resumePOR{\textnormal{Dean's List Award}}
+    {}
+    {Dec 2024, May 2025, Dec 2025, May 2026}
+
+\resumePOR{\textnormal{OpenAI Researcher Access Program Award (2000 USD Credits)}}
+    {}
+    {Nov 2024}
+
+\resumePOR{\textnormal{Rutgers Novieli Award (Annual CS Departmental Awards)}}
+    {}
+    {April 2026}
+
+\resumePOR{\textnormal{Rutgers Paul Robeson Award (Annual SAS College  Awards)}}
+    {}
+    {April 2026}
+\resumeSubHeadingListEnd
+\vspace{-4mm}
+
+
+
+
+
+
+
+
+
+
+\end{document}
